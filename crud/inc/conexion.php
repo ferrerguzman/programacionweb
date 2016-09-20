@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	<?php 
+<?php 
 	 $conexion=new mysqli("localhost","root","root",'programacionweb');
 	 if ($conexion->connect_errno){
 	 	echo "Error al conectar ala BB DD:".
@@ -15,6 +9,3 @@
 	 	$conexion->set_charset("utf8");
 	 }
 	 ?>
-
-</body>
-</html>
