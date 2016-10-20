@@ -21,7 +21,7 @@
 	<script src="crud/assets/js/bootstrap.min.js"></script>
 	<script src="crud/assets/js/herramientas.js"></script>
 	<!--<script src="crud/assets/js/asincrono.js"></script>-->
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		//$(
 			//function(){ alert('Hola Script');}
 			var mi_boton=$("<button>");
@@ -35,25 +35,43 @@
 				//alert("Hola DOM");
 				//e.preventDefault();
 				
-				$.ajax(
-					{
+				$.ajax({
 						method:"post",
 						url:"contenido.html",dataType:"html"
-					}	
-				).done(function(respuesta){
-					//division.text(respuesta);
-					//division.html(respuesta);
-					division.append(respuesta);
-					//division.preppend(respuesta);
-				});
+						}).done(function(respuesta){
+						//division.text(respuesta);
+						//division.html(respuesta);
+						division.append(respuesta);
+						//division.preppend(respuesta);
+						});
 			});
 			//);
 			var division=$("<div>");
 			division.attr({"id":"div-contenido"});
 			division.text("Aqui va el Contenido");
 			cuerpo.append(division);
+	</script>-->
+	<script type="text/javascript">
+		p={"paterno":"Flores",
+			"materno":"Condori",
+			"nombres":"Juan"};
+
+		function mostrar(persona){
+			tabla=$("<table>");
+			cabecera=$("<tr>").append(
+				$("<th>").text("Paterno"),
+				$("<th>").text("Materno"),
+				$("<th>").text("Nombres"));
+			
+			datos=$("<tr>").append(
+				$("<td>").text(persona.paterno),
+				$("<td>").text(persona.materno),
+				$("<td>").text(persona.nombres));
+
+			$("body").append(tabla.append(cabecera,datos));
+		}
+		mostrar(p);
 	</script>
-	
 
 </body>
 </html>
